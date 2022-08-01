@@ -1,21 +1,36 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { useFonts } from "expo-font";
+import {
+    Roboto_300Light,
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+} from "@expo-google-fonts/roboto";
+import { ThemeProvider } from "styled-components";
+
+import theme from "./src/global/theme";
+
+import { SignIn } from "./src/screens/SignIn";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    const [fontsLoaded] = useFonts({
+        Roboto_300Light,
+        Roboto_400Regular,
+        Roboto_500Medium,
+        Roboto_700Bold,
+    });
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+    if (!fontsLoaded) {
+        return (
+            <View>
+                <Text>Carregando...</Text>
+            </View>
+        );
+    }
+    return (
+        <ThemeProvider theme={theme}>
+            <SignIn />
+        </ThemeProvider>
+    );
+}

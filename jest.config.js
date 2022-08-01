@@ -1,6 +1,14 @@
 module.exports = {
     preset: 'jest-expo',
-    setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+    testPathIgnorePatterns: [
+        '/node_modules',
+        '/android',
+        '/ios'
+    ],
+    setupFilesAfterEnv: [
+        '@testing-library/jest-native/extend-expect',
+        'jest-styled-components'
+    ],
     collectCoverage: true,
     collectCoverageFrom: [
         '**/*.{ts,tsx}',
