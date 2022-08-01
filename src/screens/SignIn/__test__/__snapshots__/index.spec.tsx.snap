@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignIn Screen Should be signin screen match in snapshot 1`] = `
+Array [
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexBasis": 0,
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "justifyContent": "center",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Roboto_300Light",
+            "fontSize": 20,
+          },
+        ]
+      }
+    >
+      Teste
+    </Text>
+  </View>,
+  ",",
+]
+`;
